@@ -1,0 +1,42 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.footer {
+  @include flex-center;
+  background: radial-gradient(51.51% 71.19% at 50% 70.21%, $color-quaternary-gradient 0, $color-quaternary 100%);
+  flex-direction: column;
+  margin-top: 45px;
+  min-height: 60px;
+
+  &__policy {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  
+  &__text {
+    font-size: 14px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1023px) {
+  
+  .footer {
+    margin-left: $menu-size;
+  }
+}
+
+@media (min-width: 1024px) {
+  
+  .footer {
+    margin-top: 85px;
+    min-height: 80px;
+
+    &__policy {
+      font-size: 16px;
+    }
+    
+    &__text {
+      font-size: 18px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@use '../utilities/variables' as *;
+
+.header {
+  background-attachment: fixed;
+  background-image: url(../img/main-page/header.jpg);
+  background-size: cover;
+  height: calc(100dvh - $menu-size);
+  margin-top: $menu-size;
+  position: relative;
+  width: 100%;
+  
+  &__text {
+    bottom: 35%;
+    color: $color-secondary;
+    font-size: 40px;
+    left: 0;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    padding: 0 10vw;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (orientation: landscape) {
+  
+  .header {
+    background-position: 0% 0%;
+    height: 100dvh;
+    margin-top: 0;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1023px) {
+  
+  .header__text {
+    padding-left: 15vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  
+  .header__text {
+    font-size: 60px;
+    word-spacing: 8px;
+  }
+}

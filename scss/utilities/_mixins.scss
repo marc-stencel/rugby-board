@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+@mixin flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name}{
+    100% {
+      background-color: $bg-color-tertiary-dark;
+    }
+  }
+}
+
+@mixin hit-animation ($name, $duration) {
+  animation: $name $duration;
+}
+
+@mixin transition {
+  transition: 0.3s linear;
+}

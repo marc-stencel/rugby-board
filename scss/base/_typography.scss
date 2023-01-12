@@ -1,0 +1,23 @@
+@use '../utilities/variables' as *;
+
+html {
+  color: $color-primary-dark;
+  font-family: $font-default;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a {
+  color: $color-primary-dark;
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  
+  p {
+    font-size: 18px;
+  }
+}

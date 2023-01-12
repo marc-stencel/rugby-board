@@ -1,0 +1,82 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.board {
+  background-color: $bg-color-primary-variant;
+  border: 2px solid $color-secondary-variant;
+  box-shadow: 0 0 10px 10px $box-shadow-board;
+  display: grid;
+  flex-grow: 1;
+  grid-gap: 2px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+
+  &--inactive {
+    display: none;
+  }
+
+  &__element {
+
+    &::before {
+      @include flex-center;
+      font-size: 24px;
+      height: 100%;
+    }
+
+    &--active {
+      @include transition;
+      cursor: pointer;
+      opacity: 0.6;
+    }
+  }
+
+  &__posts-container, &__flag-container {
+    position: relative;
+  }
+
+  &__home-main::before, &__home-ingoal::before {
+    color: $color-secondary-variant;
+  }
+
+  &__away-main::before, &__away-ingoal::before {
+    color: $color-quaternary-variant;
+    opacity: 0;
+  }
+
+  &__home-main, &__away-main {
+    background-color: $bg-color-quinary;
+  }
+
+  &__home-ingoal, &__away-ingoal {
+    background-color: $bg-color-senary;
+  }
+}
+
+@media (orientation: landscape){
+  
+  .board {
+    flex-grow: 0;
+    height: 85dvh;
+    max-width: 300px;
+    width: 50dvh;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1023px) {
+  
+  .board__element::before {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  
+  .board {
+    height: 80dvh;
+    max-width: 450px;
+
+    &__element::before {
+      font-size: 30px;
+    }
+  }
+}

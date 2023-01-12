@@ -1,0 +1,99 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.scoreboard {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+  position: relative;
+
+  &::after {
+    background-color: $bg-color-quaternary;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    position: absolute;
+    width: 40%;
+  }
+
+  &--game::after {
+    bottom: 15px;
+    width: 60px;
+  }
+
+  &__home, &__away {
+    min-width: 120px;
+    text-align: center;
+  }
+
+  &__team {
+    box-shadow: 0 0 0 2px $color-quinary;
+    border-radius: 25%;
+    height: 13vw;
+    margin: 0 auto;
+    max-height: 100px;
+    max-width: 180px;
+    overflow: hidden;
+    width: 20vw;
+
+    &--active {
+      @include transition;
+      box-shadow: 0 0 0 2px $color-quinary, 0 0 18px 2px $color-quinary;
+    }
+  }
+
+  &__flag {
+    display: none;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__description {
+    font-size: 20px;
+    font-weight: 700;
+    height: 45px;
+    padding-top: 20px;
+    text-transform: capitalize;
+    width: 100%;
+  }
+}
+
+
+@media (orientation: landscape){
+  
+  .scoreboard__team {
+    height: 6vw;
+    width: 12vw;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 1023px) {
+  
+  .scoreboard--game::after {
+    bottom: -100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  
+  .scoreboard {
+
+    &--game::after {
+      bottom: -150px;
+      width: 85px;
+    }
+
+    &__home, &__away {
+      min-width: 18vw;
+    }
+
+    &__team--active {
+      box-shadow: 0 0 0 2px $color-quinary, 0 0 16px 4px $color-quinary;
+    }
+    
+    &__description {
+    font-size: 28px;
+    }
+  }
+}

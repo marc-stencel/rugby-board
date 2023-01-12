@@ -1,0 +1,58 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.contact {
+  &__socials {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  
+  &__link {
+    margin: 15px;
+    outline: transparent;
+
+    &:focus, &:focus-visible {
+
+      .contact__icon {
+        color: $color-primary-dark;
+      }
+    }
+  }
+  
+  &__icon {
+    @include transition;
+    color: $color-primary-light;
+    font-size: 36px;
+    
+    &:hover {
+      color: $color-primary-dark;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  
+  .contact {
+    display: flex;
+
+    &__form {
+      flex-grow: 1;
+    }
+
+    &__info {
+      display: flex;
+      flex-basis: 40%;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    &__socials {
+      margin-right: 20px;
+    }
+
+    &__icon {
+      font-size: 46px;
+    }
+  }
+}

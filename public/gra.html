@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rugby Board - gra</title>
+
+    <meta name="author" content="Marcin Stencel">
+    <meta
+      name="description"
+      content="Rugby Board to połączenie klasycznej gry w statki z olimpijską odmianą sportu drużynowego - rugby.">
+    <meta
+      name="keywords"
+      contenet ="rugby, rugby board, gra planszowa, gra rugby online, rugby statki">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" type="image/png">
+
+    <script src="https://kit.fontawesome.com/1b970cb849.js" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
+  </head>
+
+  <body class="body body--game">
+    <nav class="menu">
+      <a class="menu__logo" href="index.html">Rugby Board</a>
+      <ul class="menu__list">
+        <li class="menu__item">
+          <a class="menu__link" href="index.html#about">
+            <i class="menu__icon fa-solid fa-info"></i>O grze
+          </a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="index.html#rules">
+            <i class="menu__icon fa-solid fa-puzzle-piece"></i>Zasady
+          </a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="index.html#contact">
+            <i class="menu__icon fa-solid fa-envelope"></i>Kontakt
+          </a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="gra.html">
+            <i class="menu__icon fa-solid fa-trophy"></i>Zagraj
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="main main--game">
+      <h2 class="main__title main__title--game">Drużyny</h2>
+
+      <div class="scoreboard">
+        <div class="scoreboard__home">
+          <div class="scoreboard__team scoreboard__team--active">
+            <img class="scoreboard__flag" src="" alt="">
+          </div>
+          <p class="scoreboard__description"></p>
+        </div>
+
+        <div class="result">
+          <span class="result__content">0</span>
+          <span class="result__divider">vs</span>
+          <span class="fa-solid result__description"></span>
+          <span class="result__content">0</span>
+        </div>
+          
+        <div class="scoreboard__away">
+          <div class="scoreboard__team">
+            <img class="scoreboard__flag" src="" alt="">
+          </div>
+          <p class="scoreboard__description"></p>
+        </div>
+      </div>
+
+      <div class="flags">
+        <div class="flags__element">
+          <img tabindex="0" data-country="0" class="flags__image"
+            src="img/flags/belgia.png"
+            alt="Flaga Belgii">
+        </div>
+        <div class="flags__element">
+          <img tabindex="0" data-country="1" class="flags__image"
+          src="img/flags/gruzja.png"
+          alt="Flaga Gruzji">
+        </div>
+        <div class="flags__element">
+          <img tabindex="0" data-country="2" class="flags__image"
+          src="img/flags/hiszpania.png"
+          alt="Flaga Hiszpanii">
+        </div>
+        <div class="flags__element">
+          <img tabindex="0" data-country="3" class="flags__image"
+          src="img/flags/holandia.png"
+          alt="Flaga Holandii">
+        </div>
+        <div class="flags__element">
+          <img tabindex="0" data-country="4" class="flags__image"
+          src="img/flags/niemcy.png"
+          alt="Flaga Niemiec">
+        </div>
+        <div class="flags__element">
+          <img tabindex="0" data-country="5" class="flags__image"
+          src="img/flags/polska.png"
+          alt="Flaga Polski">
+        </div>
+        <div class="flags__element">
+          <img tabindex="0" data-country="6" class="flags__image"
+          src="img/flags/portugalia.png"
+          alt="Flaga Portugalii">
+        </div>
+        <div class="flags__element">
+          <img tabindex="0" data-country="7" class="flags__image"
+          src="img/flags/rumunia.png"
+          alt="Flaga Rumunii">
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button tabindex="0" class="btn btn--game btn--reset" disabled>Reset</button>
+        <button tabindex="0"class="btn btn--game btn--forward" disabled>Dalej</button>
+        <button tabindex="0"class="btn btn--game btn--play" disabled>Zagraj</button>
+      </div>
+
+      <div class="board board--inactive">
+        <div tabindex="0" data-row="0" class="fa-solid board__element board__home-ingoal"></div>
+        <div tabindex="0" data-row="1" class="fa-solid board__element board__home-ingoal"></div>
+        <div tabindex="0" data-row="2" class="fa-solid board__element board__home-ingoal"></div>
+        <div tabindex="0" data-row="3" class="fa-solid board__element board__home-ingoal"></div>
+        <div tabindex="0" data-row="4" class="fa-solid board__element board__home-ingoal"></div>
+        <div tabindex="0" data-row="0" class="fa-solid board__element board__home-ingoal board__flag-container">
+          <i class="fa-solid fa-flag-checkered fa-flip-horizontal flag--one"></i>
+        </div>
+        <div tabindex="0" data-row="1" class="fa-solid board__element board__home-ingoal"></div>
+        <div tabindex="0" data-row="2" class="fa-solid board__element board__home-ingoal board__posts-container">
+          <i class="fa-solid fa-h fa-flip-vertical"></i>
+        </div>
+        <div tabindex="0" data-row="3" class="fa-solid board__element board__home-ingoal"></div>
+        <div tabindex="0" data-row="4" class="fa-solid board__element board__home-ingoal board__flag-container">
+          <i class="fa-solid fa-flag-checkered flag--two"></i>
+        </div>
+        <div tabindex="0" data-row="0" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="1" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="2" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="3" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="4" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="0" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="1" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="2" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="3" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="4" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="0" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="1" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="2" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="3" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="4" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="0" class="fa-solid board__element board__home-main board__flag-container">
+          <i class="fa-solid fa-flag-checkered fa-flip-horizontal flag--five"></i>
+        </div>
+        <div tabindex="0" data-row="1" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="2" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="3" class="fa-solid board__element board__home-main"></div>
+        <div tabindex="0" data-row="4" class="fa-solid board__element board__home-main board__flag-container">
+          <i class="fa-solid fa-flag-checkered flag--six"></i>
+        </div>
+        <div tabindex="0" data-row="0" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="1" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="2" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="3" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="4" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="0" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="1" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="2" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="3" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="4" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="0" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="1" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="2" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="3" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="4" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="0" class="fa-solid board__element board__away-main board__flag-container">
+          <i class="fa-solid fa-flag-checkered fa-flip-horizontal flag--three"></i>
+        </div>
+        <div tabindex="0" data-row="1" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="2" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="3" class="fa-solid board__element board__away-main"></div>
+        <div tabindex="0" data-row="4" class="fa-solid board__element board__away-main board__flag-container">
+          <i class="fa-solid fa-flag-checkered flag--four"></i>
+        </div>
+        <div tabindex="0" data-row="0" class="fa-solid board__element board__away-ingoal"></div>
+        <div tabindex="0" data-row="1" class="fa-solid board__element board__away-ingoal"></div>
+        <div tabindex="0" data-row="2" class="fa-solid board__element board__away-ingoal board__posts-container">
+          <i class="fa-solid fa-h fa-h2"></i>
+        </div>
+        <div tabindex="0" data-row="3" class="fa-solid board__element board__away-ingoal"></div>
+        <div tabindex="0" data-row="4" class="fa-solid board__element board__away-ingoal"></div>
+        <div tabindex="0" data-row="0" class="fa-solid board__element board__away-ingoal"></div>
+        <div tabindex="0" data-row="1" class="fa-solid board__element board__away-ingoal"></div>
+        <div tabindex="0" data-row="2" class="fa-solid board__element board__away-ingoal"></div>
+        <div tabindex="0" data-row="3" class="fa-solid board__element board__away-ingoal"></div>
+        <div tabindex="0" data-row="4" class="fa-solid board__element board__away-ingoal"></div>
+      </div>
+    </main>
+  </body>
+</html>

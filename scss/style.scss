@@ -1,0 +1,25 @@
+// utilities
+@use 'utilities/variables';
+@use 'utilities/mixins';
+
+// base
+@use 'base/reset';
+@use 'base/base';
+@use 'base/typography';
+
+// layout
+@use 'layout/nav';
+@use 'layout/header';
+@use 'layout/main';
+@use 'layout/footer';
+
+// components
+@use 'components/info';
+@use 'components/contact';
+@use 'components/buttons';
+@use 'components/inputs';
+@use 'components/scoreboard';
+@use 'components/result';
+@use 'components/flags';
+@use 'components/board';
+@use 'components/game-icons';

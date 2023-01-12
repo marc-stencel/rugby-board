@@ -1,0 +1,37 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.input, .textarea {
+  border: 1px solid $color-tertiary-light;
+  border-radius: 20px;
+  color: $color-primary-dark;
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  width: 100%;
+  
+  &:focus, &:focus-visible {
+    background-color: $bg-color-primary-variant;
+    outline: solid 3px $color-primary-light;
+  }
+  
+  &::placeholder, &:placeholder-shown {
+    color: $color-primary-dark;
+  }
+  
+  &:valid {
+    border-color: $color-primary-light;
+  }
+  
+  &:invalid {
+    border-color: $color-tertiary-light;
+    
+    &:focus {
+      outline-color: $color-tertiary-light;
+    }
+  }
+}
+
+.textarea {
+  line-height: 1.5;
+}

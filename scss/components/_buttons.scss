@@ -1,0 +1,71 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.btn {
+  @include transition;
+  border: none;
+  border-radius: 20px;
+  color: $color-secondary;
+  cursor: pointer;
+  outline: transparent;
+
+  &--forward, &--play, &--form {
+    background-color: $bg-color-secondary-light;
+
+    &:hover, &:focus, &:focus-visible {
+      background-color: $bg-color-secondary-dark;
+    }
+  }
+
+  &--reset {
+    background-color: $bg-color-tertiary-light;
+
+    &:hover, &:focus, &:focus-visible {
+      background-color: $bg-color-tertiary-dark;
+    }
+  }
+  
+  &-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &--game {
+    font-size: 16px;
+    height: 28px;
+    width: 80px;
+
+    &:disabled {
+      cursor: auto;
+      opacity: 0.2; 
+    }
+  }
+
+  &--play {
+    display: none;
+    margin-bottom: 20px;
+  }
+  
+  &--form {
+    display: block;
+    font-size: 24px;
+    height: 40px;
+    margin: 0 auto;
+    width: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  
+  .btn {
+    &--game {
+      font-size: 20px;
+      height: 34px;
+      width: 90px;
+    }
+
+    &--form {
+      width: 350px;
+    }
+  }
+}

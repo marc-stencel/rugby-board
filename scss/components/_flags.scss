@@ -1,0 +1,53 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.flags {
+  column-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0;
+  row-gap: 40px;
+
+  &__element {
+    // flex-basis: 20%;
+    height: 13vw;
+    width: 20vw;
+  }
+
+  &__image {
+    border-radius: 48%;
+    box-shadow: 0 0 0 2px $color-quinary, 0 0px 5px 1px $color-quinary, 0 20px 25px -10px $color-quinary;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    max-height: 100px;
+    max-width: 180px;
+    width: 100%;
+    
+    &:hover {
+      box-shadow: 0 0 0 2px $color-quinary, 0 3px 16px 4px $color-quinary;
+    }
+
+    &:focus, &:focus-visible {
+      outline: solid 5px $color-quinary;
+    }
+  }
+}
+
+
+@media (orientation: landscape){
+  
+  .flags__element {
+    height: 5vw;
+    width: 8vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  
+  .flags {
+    margin: 0;
+  }
+}

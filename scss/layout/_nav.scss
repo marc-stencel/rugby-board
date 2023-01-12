@@ -1,0 +1,106 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.menu {
+  align-items: center;
+  background-color: $bg-color-primary;
+  box-shadow: 0 16px 24px -16px rgba(0, 0, 0, 0.8);
+  display: flex;
+  height: $menu-size;
+  justify-content: space-between;
+  left: 0;
+  padding: 12px 8px 16px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  &__logo {
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  &__list {
+    align-items: center;
+    display: flex;
+  }
+
+  &__item {
+    margin: 0 4px;
+  }
+
+  &__link, &__icon {
+    @include flex-center;
+    width: 50px;
+  }
+  
+  &__link {
+    flex-direction: column;
+    font-size: 12px;
+  }
+  
+  &__icon {
+    @include transition;
+    border-radius: 16px;
+    font-size: 20px;
+    margin-bottom: 3px;
+    padding: 5px 14px;
+    text-align: center;
+
+    &:hover, &--play {
+      background-color: $bg-color-secondary-dark;
+      color: $color-secondary;
+    }
+  }
+}
+
+// fontawesome puzzle icon
+.fa-puzzle-piece::before {
+  left: 2px;
+  position: relative;
+}
+
+@media (orientation: landscape) and (max-width: 1023px) {
+  
+  .menu {
+    box-shadow: 16px 0 24px -16px rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+    height: 100dvh;
+    padding: 12px 16px 8px 12px;
+    width: $menu-size;
+
+    &__logo {
+      font-size: 20px;
+    }
+
+    &__list {
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  
+  .menu {
+    padding: 12px 12vw 16px;
+
+    &__item {
+      margin: 0 8px;
+    }
+
+    &__link, &__icon {
+      width: 70px;
+    }
+
+    &__link {
+      font-size: 18px;
+    }
+
+    &__icon::before {
+      font-size: 24px;
+    }
+  }
+}
